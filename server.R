@@ -1,7 +1,10 @@
 # GovHack 2016
-# Date:
+# Date: 
 # Authors: Andrew Chiu
 #          John Le
+#          Alex Levashov
+#          Dylan Sanusi-Goh
+#          Keith Chong
 
 
 # server.R
@@ -44,9 +47,55 @@ shinyServer(function(input, output) {
     p2
   })
   
+  output$weather <- renderPlotly({
+    weatherPlot <- weather %>%
+                   mutate(Date = ymd(Date),
+                          Year= year(Date)) %>%
+                   filter(Year == "2013")
+    p3 <- plot_ly(data = weatherPlot,
+                  x = Date,
+                  y = minTemp) %>%
+          add_trace(data = weatherPlot,
+                    x = Date,
+                    y = maxTemp)
+    p3
+  })
+  
+  output$linearModel <- renderPrint({
+    linearMod <- filter(station_daily, Station == "Southern Cross")   # Subset data to selected station
+    
+    linearMod <- left_join(linearMod, weather, by = "Date")
+    linearMod$Date <- ymd(linearMod$Date)
+    linearMod <- mutate(linearMod,
+                        Weekday = weekdays(linearMod$Date),
+                        Month = month(linearMod$Date),
+                        Quarter = quarters(linearMod$Date))
+    
+    ## Linear model for station
+    lm.fit <- lm(Daily_Patronage ~ maxTemp + minTemp + Month + Weekday, 
+                 data = linearMod)
+    summary(lm.fit)
+  })
+  
   output$Date <- renderPrint({
-    date <- input$date
-    paste(weekdays(date), month(date), sep = ",")
+    date <- as.Date(input$date)
+    
+    temp <- filter(weatherForecast, Date == date)
+    
+    minTemp <- min(temp$temperature)
+    
+    maxTemp <- max(temp$temperature)
+    
+    weekday <- weekdays(date)
+    
+    month <- month(date)
+    
+    newData <- data.frame(minTemp = minTemp,
+                       maxTemp = maxTemp,
+                       Month = month,
+                       Weekday = weekday)
+    
+    paste("Minimum temperature:", minTemp, "Maximum temperature:", maxTemp, "Weekday:", weekday, sep = " ")
   })
   
   output$Patronage <- renderPrint({
@@ -62,9 +111,13 @@ shinyServer(function(input, output) {
                    Quarter = quarters(temp$Date))
     
     ## Linear model for station
-    lm.fit <- lm(Daily_Patronage ~ rainfall_mm + maxTemp + minTemp + Month + Weekday, 
+    lm.fit <- lm(Daily_Patronage ~ maxTemp + minTemp + Month + Weekday, 
                  data = temp)
-    summary(lm.fit)
+    #summary(lm.fit)
+    pred <- predict(lm.fit, newdata = newData)
+    
+    paste("Predicted patronage:", pred, sep = " ")
+    
   })
   
   output$map1 <- renderLeaflet({

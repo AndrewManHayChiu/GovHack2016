@@ -1,7 +1,10 @@
 # GovHack 2016
-# Date:
+# Date: 
 # Authors: Andrew Chiu
 #          John Le
+#          Alex Levashov
+#          Dylan Sanusi-Goh
+#          Keith Chong
 
 
 # ui.R
@@ -109,8 +112,17 @@ body <- dashboardBody(
               
               fluidRow(
                 plotlyOutput("patronage")
+              ), # End of fluidRow
+              
+              fluidRow(
+                plotlyOutput("weather")
+              ), # End of fluidRow
+
+              fluidRow(
+                verbatimTextOutput("linearModel")
               ) # End of fluidRow
               
+                            
             ) # End of fluidPage
             ), # End of ANALYSIS tabItem
     

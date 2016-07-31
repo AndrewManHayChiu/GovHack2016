@@ -2,7 +2,9 @@
 # Date: 
 # Authors: Andrew Chiu
 #          John Le
-
+#          Alex Levashov
+#          Dylan Sanusi-Goh
+#          Keith Chong
 
 # global.R
 
@@ -22,6 +24,7 @@ library(Rforecastio)      # forecast weather data
 library(lubridate)        # Manipulate date variables
 #library(googleVis)        # Interactive graphics
 library(plotly)           # Another interactive graphics library
+library(weatherr)      # Get weather forecast data
 
 # Load Data ---------------------------------------------------------------
 ###########################################################################
@@ -32,3 +35,7 @@ station_daily <- read.csv("Data/Station - Daily.csv")   # all stations, daily
 
 weather <- read.csv("Data/Weather/weather.csv")         # Weather data, daily
 names(weather)[1] <- "Date"
+
+weatherForecast <- locationforecast(lat = -37.8136,
+                                    lon = 144.9631) %>%
+                   mutate(Date = as.Date(time))

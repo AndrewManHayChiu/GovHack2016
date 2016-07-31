@@ -1,0 +1,28 @@
+---
+title: "Data Sources"
+output: html_document
+---
+
+## Data Sources
+
+####Agencies/ Websites:
+
+1. [Public Transport Victoria (PTV)](http://ptv.vic.gov.au/assets/PTV/PTV%20docs/research/PTV-Station-by-Station-Fact-Sheet-accessible-version-2015.xls)
+
+2. [Bureau of Meteorology (BoM)](http://www.bom.gov.au/climate/dwo/IDCJDW3050.latest.shtml)
+* [1](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=136&p_display_type=dailyDataFile&p_startYear=&p_c=&p_stn_num=86071)
+* [2](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=136&p_display_type=dailyDataFile&p_startYear=&p_c=&p_stn_num=86338)
+* [3](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=122&p_display_type=dailyDataFile&p_startYear=&p_c=&p_stn_num=86071)
+* [4](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=123&p_display_type=dailyDataFile&p_startYear=&p_c=&p_stn_num=86071)
+* [5](http://www.bom.gov.au/jsp/ncc/cdio/weatherData/av?p_nccObsCode=123&p_display_type=dailyDataFile&p_startYear=&p_c=&p_stn_num=86338)
+
+3. [Melboune Open Data](https://data.melbourne.vic.gov.au/)
+
+4. [Traffic (VICROADS)](https://vicroads-public.sharepoint.com/InformationAccess/SitePages/Home.aspx?RootFolder=%2FInformationAccess%2FShared%20Documents%2FTraffic%20Measurements%2FVolume%2FRoad%2FSignal%20Volume%20Data&FolderCTID=0x0120002725289918FD604B8B8CE7E07B555745&View=%7B37949BE7-111A-400B-AB9B-71D24780E321%7D)
+
+Data was scraped from each of the daily subfolders of 2014, 2015 and 2016.
+
+5. [Pedestrian Counts](https://data.melbourne.vic.gov.au/Transport-Movement/Pedestrian-Counts/b2ak-trbp)
+
+6. [Yarra Trams](http://www.yarratrams.com.au/about-us/who-we-are/facts-figures/)
+From the Yarra Trams website we used the quoted figures of "approximately 3.5 million passenger trips taken on the Yarra Trams network every week" which averages to approximately 500,000 average daily tram trips.
