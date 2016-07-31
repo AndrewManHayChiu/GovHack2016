@@ -19,9 +19,14 @@ library(ggplot2)          # Visualisations
 library(plotly)           # Visualisations - interactive
 library(leaflet)          # Map
 library(Rforecastio)      # forecast weather data
+library(lubridate)        # Manipulate date variables
 
 # Load Data ---------------------------------------------------------------
 ###########################################################################
 #                             LOAD DATA                                   #
 ###########################################################################
 
+station_daily <- read.csv("Data/Station - Daily.csv")   # all stations, daily
+
+weather <- read.csv("Data/Weather/weather.csv")         # Weather data, daily
+names(weather)[1] <- "Date"
