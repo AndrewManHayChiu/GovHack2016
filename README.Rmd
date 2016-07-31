@@ -1,12 +1,65 @@
 ---
-title: "GovHack 2016"
+title: "Home"
+header-includes:
+  - /usepackage{bbm}
 output: html_document
 ---
 
-## Introduction
+### Welcome!
 
-Markdown introduction to the app and the task.
+The goal of this app is to address some of the problems of commuter herding behaviour in Melbourne.
 
-Can be embedded within Shiny app.
+For some commuters, waking up to a cold, wet morning may convince them that driving to the CBD is better bet than walking 15 minutes to the train station.
+This is fine, but the herding behaviour may result in too many cars on arterial roads, rendering taking public transport a faster option.
+The opposite may happen, and too many people take to the public system, resulting in overcrowding of trains.
+
+This app seeks to help:
+
+* Commuters decide whether to drive to work, or take to the public transport system
+* Emergency services decide whether to deploy more services to the roads/train Stations
+* Public Transport Victoria to decide whether to deploy more ad hoc services
+
+#### Shiny
+This is a Shiny App, and so is both browser and mobile friendly!
+
+### Navigation
+To use the app, use the navigation icon in the top-left corner.
 
 
+#### Analysis
+
+This page shows some simple analysis conducted on the data used for this app.
+
+
+#### Prediction
+
+The Prediction page is designed for users to predict what traffic / public transport conditions will be like, based on weather forecasts.
+
+The prediction is done based on the following linear model,
+
+E(Transport) = Weather variables + Time variables 
+
+where weather variables include:
+
+* Max temperature
+* Min temperature
+* Rainfall
+* Day of the week
+* Month
+
+
+#### Map
+
+The goal of this page is to allow users to select particular train stations to see patronage trends, and future predictions.
+
+
+#### Data Sources
+
+This page lists the data that we have used for the GovHack2016 competition.
+
+#### Code
+
+Code for this Shiny App can be found in UI, Server and Global pages in the navigation bar.
+
+Source code for the Shiny App and GovHack data can be found in the
+[GitHub](https://github.com/AndrewManHayChiu/GovHack2016) link.
