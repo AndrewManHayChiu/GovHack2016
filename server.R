@@ -19,7 +19,26 @@ shinyServer(function(input, output) {
   ###########################################################################
   
   output$Date <- renderPrint({
-    input$date
+    date <- input$date
+    paste(weekdays(date), month(date), sep = ",")
+  })
+  
+  output$Patronage <- renderPrint({
+    station <- as.character(input$station)    # User selects station
+    #station
+    temp <- filter(station_daily, Station == station)   # Subset data to selected station
+    
+    temp <- left_join(temp, weather, by = "Date")
+    temp$Date <- ymd(temp$Date)
+    temp <- mutate(temp,
+                   Weekday = weekdays(temp$Date),
+                   Month = month(temp$Date),
+                   Quarter = quarters(temp$Date))
+    
+    ## Linear model for station
+    lm.fit <- lm(Daily_Patronage ~ rainfall_mm + maxTemp + minTemp + Month + Weekday, 
+                 data = temp)
+    summary(lm.fit)
   })
   
   output$map1 <- renderLeaflet({
