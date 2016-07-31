@@ -155,6 +155,13 @@ body <- dashboardBody(
     tabItem(tabName = "map",
             fluidPage(
               fluidRow(
+                h3("Mapping Patronage Data"),
+                p("The goal for this page is to display information about the patronage for selected stations."),
+                p("It may not be very interactive at the moment, but give us a bit of time and it will!")
+              ), #End of fluidRow
+              
+              fluidRow(
+                h4("Map"),
                 leafletOutput("map1")
               ) # End of fluidRow
             ) # End of fluidPage

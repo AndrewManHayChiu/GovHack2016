@@ -7,20 +7,35 @@ output: html_document
 
 ### Welcome!
 
-The goal of this app is to address some of the problems of commuter herding behaviour in Melbourne.
+The goal of this app is to address a hidden problem: commuter herding behaviour in Melbourne.
 
-For some commuters, waking up to a cold, wet morning may convince them that driving to the CBD is better bet than walking 15 minutes to the train station.
-This is fine, but the herding behaviour may result in too many cars on arterial roads, rendering taking public transport a faster option.
-The opposite may happen, and too many people take to the public system, resulting in overcrowding of trains.
+We often decide how to go to work based on the present weather and past experience. The weather can influence traffic conditions such as speed and accidents, and also our preference for comfort, convenience and speed.
+
+However, herding behaviour often results in sub-optimal decisions. For example, on a cold rainy day, a commuter who needs to walk 15 minutes to the closest station may decide that driving to work would be a better decision. When a multitude of people make this same decision, roads may become congested, and braving the weather may have been a wiser decision.
+
+Understanding where large crowds appear from smart sensors and the Internet of Things may help inform us of making better travel arrangements.
 
 This app seeks to help:
 
 * Commuters decide whether to drive to work, or take to the public transport system
-* Emergency services decide whether to deploy more services to the roads/train Stations
+* Emergency services decide whether to deploy more ambulance/paramedics to the roads/train Stations
+* Police to enforce abuse of emergency, bus and transit lanes
 * Public Transport Victoria to decide whether to deploy more ad hoc services
+
+**With more open data from PTV (We were informed that MYKI touch on / touch off data will be made available in the future), Weather(BOM), Traffic, & etc., more accurate insights can be obtained.**
 
 #### Shiny
 This is a Shiny App, and so is both browser and mobile friendly!
+
+### Limitations
+
+The app is currently limited in functionality and scope. This is due to:
+
+* Limited data from PTV resulted in approximations of daily patronage based on pedestrian captured by sensors in Melbourne CBD
+* Insufficient time to scrape and clean traffic volume data from VicRoads
+* Inconsistent naming conventions used by VicRoads, causing problems in scraping data
+* Insufficient development time in general to develop functionality of the Shiny App
+
 
 ### Navigation
 To use the app, use the navigation icon in the top-left corner.

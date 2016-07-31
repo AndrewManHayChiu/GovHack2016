@@ -42,10 +42,23 @@ shinyServer(function(input, output) {
   })
   
   output$map1 <- renderLeaflet({
+    
+    
+    
     leaflet() %>%
     addTiles() %>%
-    addMarkers(lng = 144.9631, lat = -37.8136)
-      
+    addMarkers(lng = 144.9631, lat = -37.8136) %>%
+    addCircleMarkers(lng=144.952944748845, # Longitude coordinates
+                     lat=-37.8181633057171, # Latitude coordinates
+                     radius=20, # Total count
+                     stroke=FALSE, # Circle stroke
+                     fillOpacity=0.5) %>%   # Circle Fill Opacity
+                     
+    addCircleMarkers(lng=144.956318211113, # Longitude coordinates
+                     lat=-37.8122356514626, # Latitude coordinates
+                     radius=30, # Total count
+                     stroke=FALSE, # Circle stroke
+                     fillOpacity=0.5) # Circle Fill Opacity)
   })
   
 }) # End of shinyServer

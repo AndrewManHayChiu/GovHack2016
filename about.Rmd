@@ -9,54 +9,19 @@ output: html_document
 
 #### Theme Node (Victoria) - Spatial Data
 
-##Project
-futureNow
+This app was developed as part of the 2016 GovHack held across Australia and New Zealand.
 
 
-
-
-
-
-#### End Users / Target Audience
-
-Our main users would be Commuters and Government Agencies. Commuters can look into the app and get a rough picture of how crowded their destination or route will be. They can then decide if they would like to drive or use public transportation. Government Agencies, on the other hand, can anticipate and plan for extra services or add additional lane ways.
-
-the demand in public transport over time based on these variables, estimate a course of action.
-
-Other potential users include the Police Force, Ambulances and Public Transport Victoria (PTV). The Police can estimate traffic volume and enforcement. Ambulances can predict the volume of patronage within an area and choose the best route to take. PTV can predict the number of commuters and decide if they would like to use an extra train/tram to accommodate the number of passengers.
-
-**Scenarios:**
-1. John is a 28 year old introvert who has had a very bad day and wishes to travel home after a long and tiring day, he gets onto the website, puts in all the necessary information, and can immediately tell how crowded the train station is going to be. He realises that itâs going to be too crowded, so he decides to use the taxi instead of the train.
-
-2. Anna drives the ambulance and responds to emergency calls. She needs to be informed about which routes in the area to take to avoid congestion and figure out the quickest way to the hospital. Before her shift starts, she whips out her phone, gets onto the website and can immediately tell which road to stick to through the day.
-
-3. Andrew is the Chief Officer who works at PTV and is in charge of ensuring train efficiency. He looks into the website to find that Glenferrie Station is going to be very crowded today. And so he decides to deploy extra services going back and forth on the Alamein Line to accomodate the volume of commuters.  
-
-
-
-#### Prediction
-Pedestrian counts at Train Stations approximate train patronage. That is, percentage change approximate train functionals.
-
-**Linear Model:** E(Transport) = f(Weather)
-**X =** MaxTemp + MinTemp + Rain + WeekDay + PublicHoliday + Month + Season + ...
-
-**With more open data from PTV(Myki Touch ON/OFF which will only exist in the future), Weather(BOM), Traffic, & etc., more accurate insights can be obtained.**
-
-#### Data Sets
-1. PTV (2008 - 2014) 2015? 2016?
-2. Weather (BOM)
-3. Traffic (VicRoads) Live?
-4. Pedestrian Counts (Hourly, 2009 - 2016)
-
-#### Limitations
-1. Data Availability & Granularity.
+****
 
 ## Authors
 
-| Names | Contacts |
-|---|---|
+The team was formed as part of the Melbourne MapSpace theme node with a focus on geo-spatial data.
+
+| Names  | Contacts |
+|--------|----------|
 | Andrew | [github](https://github.com/AndrewManHayChiu/)
-| John | [github](https://github.com/john-le)
-| Dylan | [github](https://github.com/dsg2806)
-| Keith | [github](https://github.com/keitheous/)
-| Alex | [github](https://github.com/alevashov)
+| John   |
+| Dylan  |
+| Keith  | [github](https://github.com/keitheous/)
+| Alex   | [github](https://github.com/alevashov)
