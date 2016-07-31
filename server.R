@@ -99,6 +99,24 @@ shinyServer(function(input, output) {
   })
   
   output$Patronage <- renderPrint({
+    
+    date <- as.Date(input$date)
+    
+    temp <- filter(weatherForecast, Date == date)
+    
+    minTemp <- min(temp$temperature)
+    
+    maxTemp <- max(temp$temperature)
+    
+    weekday <- weekdays(date)
+    
+    month <- month(date)
+    
+    newData <- data.frame(minTemp = minTemp,
+                          maxTemp = maxTemp,
+                          Month = month,
+                          Weekday = weekday)
+    
     station <- as.character(input$station)    # User selects station
     #station
     temp <- filter(station_daily, Station == station)   # Subset data to selected station
