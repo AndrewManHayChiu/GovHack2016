@@ -20,6 +20,8 @@ library(plotly)           # Visualisations - interactive
 library(leaflet)          # Map
 library(Rforecastio)      # forecast weather data
 library(lubridate)        # Manipulate date variables
+#library(googleVis)        # Interactive graphics
+library(plotly)           # Another interactive graphics library
 
 # Load Data ---------------------------------------------------------------
 ###########################################################################

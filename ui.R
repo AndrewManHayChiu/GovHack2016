@@ -98,10 +98,19 @@ body <- dashboardBody(
     tabItem(tabName = "analysis",
             fluidPage(
               fluidRow(
-                # h3("Analysis"),
-                # p("Visually show the correlation between weather data and
-                #   choice of transport")
+                h3("Analysis"),
+                p("Here are some fancy graphs to show that we did some analysis...")
+                
+              ), # End of fluidRow
+              
+              fluidRow(
+                plotlyOutput("tempHistogram")
+              ), # End of fluidRow
+              
+              fluidRow(
+                plotlyOutput("patronage")
               ) # End of fluidRow
+              
             ) # End of fluidPage
             ), # End of ANALYSIS tabItem
     

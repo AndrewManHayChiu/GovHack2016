@@ -17,6 +17,32 @@ shinyServer(function(input, output) {
   ###########################################################################
   #                           SHINY OUTPUTS                                 #
   ###########################################################################
+
+  output$tempHistogram <- renderPlotly({
+    p1 <- plot_ly(data = weather,
+                 x = minTemp,
+                 opacity = 0.6,
+                 type = "histogram") %>%
+      add_trace(data = weather,
+                x = maxTemp,
+                opacity = 0.6,
+                type = "histogram") %>%
+      layout(barmode = "overlay")
+    p1
+  })
+    
+  output$patronage <- renderPlotly({
+    
+    southern <- filter(station_daily, Station == "Southern Cross") %>%
+                mutate(Date = ymd(Date),
+                       Year = year(Date)) %>%
+                filter(Year == "2013")
+
+    p2 <- plot_ly(data = southern,
+                  x = Date,
+                  y = Daily_Patronage)
+    p2
+  })
   
   output$Date <- renderPrint({
     date <- input$date
@@ -42,9 +68,6 @@ shinyServer(function(input, output) {
   })
   
   output$map1 <- renderLeaflet({
-    
-    
-    
     leaflet() %>%
     addTiles() %>%
     addMarkers(lng = 144.9631, lat = -37.8136) %>%
